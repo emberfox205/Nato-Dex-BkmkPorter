@@ -1,7 +1,8 @@
 # Nato-Dex-BkmkPorter
-#### A selenium-based Python script to transfer bookmarked titles on manganato to MangaDex's Follow directory
+### A selenium-based Python script to transfer bookmarked titles on manganato to MangaDex's Follow directory
 --- 
-### 1. Prerequisites 
+## Prerequisites 
+
 - Relevant accounts on [manganato](www.manganato.com) / [manganelo](www.manganelo.com) and [MangaDex](www.mangadex.org) logged in and passwords remembered by the browser you wish to initiate the transfer with.
 - Minimum Python 3.12 and dependencies in the `requirements.txt` file installed.
 - Compatible webdrivers for your prefered browser(s) installed in the default location
@@ -10,7 +11,8 @@
 > - [Google Chrome](https://chromedriver.chromium.org/downloads)
 > - [Mozilla Firefox](https://github.com/mozilla/geckodriver/releases)
 > - [Microsoft Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH)
-### 2. Basic Command
+## Basic Command
+
 The simplest command configuration for first / one time use:
 ```bash
 python bkmk.py run -br <browser> -dir <path/to/the/directory/containing/browser/profile> -p <profile>
@@ -24,8 +26,9 @@ python bkmk.py run -br <browser> -dir <path/to/the/directory/containing/browser/
 > - Firefox:
 >     - Enter `about:profiles` into the address bar.
 >     - In the (usually) first profile listed, the Root (not Local) path to the *Profiles* folder is the directory, while the final folder is the profile.
-### 3. Documentation 
-#### a. The `run` command
+## Documentation 
+
+#### The `run` command
 The `run` command initiates the webdriver session using the three arguments `--browser`, `--directory` and `--profile`. For first time use, all three arguments must be provided, which will then be saved into the default profile in `config.json`. 
 ```bash
 python bkmk.py -br firefox -dir "C:\Users\USER\AppData\Roaming\Mozilla\Firefox\Profiles" -p "qqgixor9.default-release"
@@ -41,7 +44,7 @@ python bkmk.py run -p "Profile 1"
 ```
 > [!NOTE]
 > Arguments, especially those of `--directory` and `--profile`, should be quoted.
-#### b. The `set` command 
+#### The `set` command 
 The `set` command sets the default arguments to be used with `run` . Arguments are the same as `run`.
 ```bash
 python bkmk.py set -br firefox -dir "C:\Users\USER\AppData\Roaming\Mozilla\Firefox\Profiles" -p "qqgixor9.default-release"
