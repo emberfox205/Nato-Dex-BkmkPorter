@@ -1,16 +1,22 @@
 # Nato-Dex-BkmkPorter
-### A selenium-based Python script to transfer bookmarked titles on manganato to MangaDex's Follow directory
---- 
+
+A selenium-based Python script to transfer bookmarked titles on manganato to MangaDex's Follow directory.
+
 ## Prerequisites 
 
 - Relevant accounts on [manganato](www.manganato.com) / [manganelo](www.manganelo.com) and [MangaDex](www.mangadex.org) logged in and passwords remembered by the browser you wish to initiate the transfer with.
 - Minimum Python 3.12 and dependencies in the `requirements.txt` file installed.
-- Compatible webdrivers for your prefered browser(s) installed in the default location
+- Compatible webdrivers for your prefered browser(s) installed in the default location.
 > [!TIP]
 > Get webdrivers here:
 > - [Google Chrome](https://chromedriver.chromium.org/downloads)
 > - [Mozilla Firefox](https://github.com/mozilla/geckodriver/releases)
 > - [Microsoft Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH)
+## Installation
+
+```bash
+git clone git@github.com:emberfox205/Nato-Dex-BkmkPorter.git
+```
 ## Basic Command
 
 The simplest command configuration for first / one time use:
