@@ -81,6 +81,7 @@ def validate_config(full_path):
         print("Path to profile exists")
         return True
 
+
 def mod_config(config: dict, *browser_configs):
     for br_cfg in browser_configs:
         for key in ["browser", "directory", "profile"]:
@@ -99,8 +100,10 @@ def executor(config):
             mod_config(config, "default")
         else:
             mod_config(config, "default", f"{args.browser}_df")
-        driver = init_web(args.browser, web_setup(args.browser, full_path, args.profile))
-        #scrape(driver)
+        driver = init_web(
+            args.browser, web_setup(args.browser, full_path, args.profile)
+        )
+        # scrape(driver)
         upload(driver)
         quit_web(driver)
 

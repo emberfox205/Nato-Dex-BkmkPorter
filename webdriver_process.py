@@ -37,15 +37,19 @@ def init_web(browser, options):
     driver.maximize_window()
     print(f"Webdriver session initialized")
     return driver
-    
+
+
 def quit_web(driver):
     driver.quit()
+
 
 def scrape(driver):
     limit_page_text = driver.find_element(By.CSS_SELECTOR, ".go-p-end").text.strip()
     limit_page_obj = re.search(r"\((\d+)\)", limit_page_text)
     limit_page = int(limit_page_obj.group(1))
-    total_titles_text = driver.find_element(By.CSS_SELECTOR, ".quantitychapter").text.strip()
+    total_titles_text = driver.find_element(
+        By.CSS_SELECTOR, ".quantitychapter"
+    ).text.strip()
     total_titles_obj = re.search(r" (\d+) ", total_titles_text)
     limit_page = int(limit_page_obj.group(1))
     total_titles = int(total_titles_obj.group(1))
@@ -101,4 +105,3 @@ def upload(driver):
         print("WARNING :: Titles failed to upload:")
         for fail in upload_fail:
             print(f"WARNING :: No result found: {fail}")
-    
