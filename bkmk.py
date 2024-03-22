@@ -97,13 +97,13 @@ def executor(config):
         if all(
             config["default"][key] == "" for key in ["browser", "directory", "profile"]
         ):
-            mod_config(config, "default")
-        else:
             mod_config(config, "default", f"{args.browser}_df")
+        else:
+            mod_config(config, f"{args.browser}_df")
         driver = init_web(
             args.browser, web_setup(args.browser, full_path, args.profile)
         )
-        # scrape(driver)
+        scrape(driver)
         upload(driver)
         quit_web(driver)
 
