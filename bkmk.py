@@ -117,11 +117,10 @@ def main():
         print("No arguments provided, run program with '-h' for help")
         exit()
     # Run with only browser specified option
-    if args.browser != None and all(
-        getattr(args, key) == None for key in ("directory", "profile")
-    ):
+    if args.browser is not None:
         for key in ["directory", "profile"]:
-            setattr(args, key, str(config[f"{args.browser}_df"][key]))
+            if getattr(args, key) is None:
+                setattr(args, key, str(config[f"{args.browser}_df"][key]))
     # Fill Nonetype arguments with default values
     else:
         for key in ["browser", "directory", "profile"]:
