@@ -59,11 +59,10 @@ def scrape(driver):
     # Scrape and store
     for page_num in range(1, limit_page):
         driver.get(f"https://manganato.com/bookmark?page={page_num}")
-        time.sleep(2)
+        time.sleep(1)
         all_items = driver.find_elements(By.CLASS_NAME, "bm-title")
         for item in all_items:
             title = item.find_element(By.TAG_NAME, "a").text
-            time.sleep(0.5)
             data["title"].append(title)
             data["manganato"] = True
             data["mangadex"] = False
@@ -87,12 +86,13 @@ def upload(driver):
             continue
         driver.maximize_window()
         print(f"Bookmarking: {title}")
+        time.sleep(2)
         try:
             driver.find_element(By.CSS_SELECTOR, ".flex-grow-0").click()
         except Exception:
             print(f"Title already uploaded: {title}")
             pass
-        time.sleep(0.1)
+        time.sleep(1)
         try:
             driver.find_element(
                 By.CSS_SELECTOR, "button.flex-grow:nth-child(2)"
