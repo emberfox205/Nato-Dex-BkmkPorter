@@ -16,7 +16,6 @@ parser_run = subparsers.add_parser(
 parser_run.add_argument(
     "-br",
     "--browser",
-    metavar="browser",
     choices=["chrome", "edge", "firefox"],
     help="Specify the browser to run the script with (chrome|edge|firefox)",
     default=None,
