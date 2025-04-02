@@ -57,6 +57,3 @@ python bkmk.py set -br firefox -dir "C:\Users\USER\AppData\Roaming\Mozilla\Firef
 ```
 > [!CAUTION]
 > While `--directory` and `--browser` will be checked for validity when used with either `run` or `set`, `--browser` will not. Make sure the browser you set default is compatible with other elements in the default profile.
----
-#### Contact:
-- Discord: emberfox205
